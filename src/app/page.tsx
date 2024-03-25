@@ -4,6 +4,7 @@ import Animation3dHoverEffect from '@/components/ui/animation-3d-hover-effect';
 import Twemoji from '@/components/ui/twemoji';
 import Image from 'next/image';
 import SpotifyNowPlaying from '@/components/homepage/spotify-now-playing';
+import PopularTags from '@/components/homepage/popular-tags';
 
 export default function Home() {
   return (
@@ -67,6 +68,7 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <PopularTags />
     </div>
   );
 }
