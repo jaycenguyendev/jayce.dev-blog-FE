@@ -5,6 +5,7 @@ import Twemoji from '@/components/ui/twemoji';
 import Image from 'next/image';
 import SpotifyNowPlaying from '@/components/homepage/spotify-now-playing';
 import PopularTags from '@/components/homepage/popular-tags';
+import RecentPosts from '@/components/homepage/recent-posts';
 
 export default function Home() {
   return (
@@ -69,6 +70,7 @@ export default function Home() {
         </div>
       </section>
       <PopularTags />
+      <RecentPosts />
     </div>
   );
 }

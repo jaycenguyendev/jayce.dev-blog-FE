@@ -1,10 +1,10 @@
-import siteMetadata from '@/data/siteMetadata';
 import LogoIcon from '@public/images/logo.svg';
 import Link from 'next/link';
 import AnalyticsLink from './analytics-link';
 import HeaderNav from './header-nav';
 import MobileNav from './mobile-nav';
 import ThemeSwitch from './theme-switch';
+import siteMetadata from '@/data/siteMetadata';
 const Header = () => {
   return (
     <header className="fixed top-0 w-full  z-40 py-4 bg-white/75 backdrop-blur supports-backdrop-blur dark:bg-dark/75">
