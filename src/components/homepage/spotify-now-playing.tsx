@@ -1,9 +1,9 @@
 import React from 'react';
 import SpotifyIcon from '@public/icons/spotify.svg';
 
-type Props = {};
+type SpotifyNowPlayingProps = {};
 
-const SpotifyNowPlaying = (props: Props) => {
+const SpotifyNowPlaying = (props: SpotifyNowPlayingProps) => {
   return (
     <div className="my-3 flex max-w-[540px] items-center gap-2 rounded bg-gray-200 px-3 py-2 shadow-md dark:bg-[#24283b] dark:shadow-gray-800/40 ">
       <SpotifyIcon className="w-6 flex-shrink-0 text-spotify" />
