@@ -1,15 +1,23 @@
+import PopularTags from '@/components/homepage/popular-tags';
+import RecentPosts from '@/components/homepage/recent-posts';
+import SpotifyNowPlaying from '@/components/homepage/spotify-now-playing';
 import TypeBios from '@/components/homepage/type-bios';
 import CustomLink from '@/components/shared/link';
 import Animation3dHoverEffect from '@/components/ui/animation-3d-hover-effect';
 import Twemoji from '@/components/ui/twemoji';
 import Image from 'next/image';
-import SpotifyNowPlaying from '@/components/homepage/spotify-now-playing';
-import PopularTags from '@/components/homepage/popular-tags';
-import RecentPosts from '@/components/homepage/recent-posts';
+import Link from 'next/link';
+import { useTranslation } from '../i18n';
 
-export default function Home() {
+export default async function Home({ params: { lng } }: any) {
+  // const { t } = await useTranslation(lng);
+  const { t } = await useTranslation(lng);
   return (
     <div className="">
+      {/* test */}
+      <Link href={`${lng}/blog`}>second page</Link>
+      <h1>{t('to-client-page')}</h1>
+
       {/* Greeting */}
       <section className="bg-gradient-to-r from-gray-500 to-slate-400 dark:bg-gradient-to-l dark:from-blue-800 dark:to-primary mb-8 bg-clip-text text-4xl font-extrabold leading-[60px] tracking-tight text-transparent md:text-7xl md:leading-[86px]">
         Hello, folks!
