@@ -1,12 +1,14 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import React from 'react';
+import Header from '@/components/ui/header';
+import siteMetadata from '@/data/siteMetadata';
 import '@/styles/globals.css';
 import '@/styles/twemoji.css';
-import Header from '@/components/ui/header';
-import Footer from '@/components/ui/footer';
-import { ThemeProvider } from 'next-themes';
-import siteMetadata from '@/data/siteMetadata';
 import clsx from 'clsx';
+import { dir } from 'i18next';
+import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
+import { Inter } from 'next/font/google';
+import { languages } from '../i18n/settings';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,13 +17,19 @@ export const metadata: Metadata = {
   description: 'This is a technical blog',
 };
 
+export async function generateStaticParams() {
+  return languages.map((lng) => lng);
+}
+
 export default function RootLayout({
   children,
+  params: { lng },
 }: Readonly<{
   children: React.ReactNode;
+  params: any;
 }>) {
   return (
-    <html lang="en">
+    <html lang={lng} dir={dir(lng)}>
       <body
         suppressHydrationWarning
         className={clsx(
