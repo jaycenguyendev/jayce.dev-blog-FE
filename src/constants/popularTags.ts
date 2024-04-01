@@ -21,70 +21,70 @@ import Postgres from '@public/icons/postgres.svg';
 import Mongodb from '@public/icons/mongodb.svg';
 
 export const BrandIcons = {
-    Bash,
-    Git,
-    GitHub,
-    Javascript,
-    Liquid,
-    Markdown,
-    NextJS,
-    Node,
-    Prisma,
-    Railway,
-    React,
-    Remix,
-    Spotify,
-    TailwindCSS,
-    Typescript,
-    Umami,
-    Vercel,
-    NestJS,
-    Docker,
-    Postgres,
-    Mongodb,
-}
+  Bash,
+  Git,
+  GitHub,
+  Javascript,
+  Liquid,
+  Markdown,
+  NextJS,
+  Node,
+  Prisma,
+  Railway,
+  React,
+  Remix,
+  Spotify,
+  TailwindCSS,
+  Typescript,
+  Umami,
+  Vercel,
+  NestJS,
+  Docker,
+  Postgres,
+  Mongodb,
+};
 
 type PopularTag = {
-    href: string;
-    iconType: keyof typeof BrandIcons;
-    slug: string;
-    title: string;
+  href: string;
+  iconType: keyof typeof BrandIcons;
+  slug: string;
+  title: string;
 };
 export const popularTags: PopularTag[] = [
-    {
-        href: '/tags/javascript',
-        iconType: 'Javascript',
-        slug: 'javascript',
-        title: 'Javascript',
-    },
-    {
-        href: '/tags/typescript',
-        iconType: 'Typescript',
-        slug: 'typescript',
-        title: 'Typescript',
-    },
-    {
-        href: '/tags/nestjs',
-        iconType: 'NestJS',
-        slug: 'nestjs',
-        title: 'NestJS',
-    },
-    {
-        href: '/tags/react',
-        iconType: 'React',
-        slug: 'react',
-        title: 'React',
-    },
-    {
-        href: '/tags/database',
-        iconType: 'Mongodb',
-        slug: 'database',
-        title: 'Database',
-    },
-    {
-        href: '/tags/devops',
-        iconType: 'Docker',
-        slug: 'devops',
-        title: 'Devops',
-    },
+  {
+    href: '/tags/javascript',
+    iconType: 'Javascript',
+    slug: 'javascript',
+    title: 'Javascript',
+  },
+  {
+    href: '/tags/typescript',
+    iconType: 'Typescript',
+    slug: 'typescript',
+    title: 'Typescript',
+  },
+  {
+    href: '/tags/nestjs',
+    iconType: 'NestJS',
+    slug: 'nestjs',
+    title: 'NestJS',
+  },
+  {
+    href: '/tags/react',
+    iconType: 'React',
+    slug: 'react',
+    title: 'React',
+  },
+  {
+    href: '/tags/database',
+    iconType: 'Mongodb',
+    slug: 'database',
+    title: 'Database',
+  },
+  {
+    href: '/tags/devops',
+    iconType: 'Docker',
+    slug: 'devops',
+    title: 'Devops',
+  },
 ];

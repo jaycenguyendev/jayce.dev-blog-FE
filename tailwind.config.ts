@@ -1,12 +1,12 @@
-import type { Config } from "tailwindcss";
-const { fontFamily } = require('tailwindcss/defaultTheme');
+import type { Config } from 'tailwindcss';
+const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'class',
   theme: {
@@ -63,7 +63,7 @@ const config: Config = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['Outfit', ...fontFamily.sans],
+        sans: ['Outfit', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: '#7aa2f7',
