@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 
 const HeaderNav = () => {
   const pathname = usePathname();
+  // const { t } = useTranslation(lng);
   return (
     <>
       {headerNavLinks.map((item) => (
@@ -18,7 +19,7 @@ const HeaderNav = () => {
               pathname.startsWith(item.href) && 'bg-gray-200 dark:bg-primary'
             )}
           >
-            {item.title}
+            {/* {t(item.title)} */}
           </CustomLink>
         </li>
       ))}

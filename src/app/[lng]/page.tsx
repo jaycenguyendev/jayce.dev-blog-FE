@@ -6,17 +6,34 @@ import CustomLink from '@/components/shared/link';
 import Animation3dHoverEffect from '@/components/ui/animation-3d-hover-effect';
 import Twemoji from '@/components/ui/twemoji';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslation } from '../i18n';
+import { Trans } from 'react-i18next/TransWithoutContext';
+import { languages } from '../i18n/settings';
+import Link from 'next/link';
 
-export default async function Home({ params: { lng } }: any) {
-  // const { t } = await useTranslation(lng);
+type Props = {
+  params: {
+    lng: string;
+  };
+};
+export default async function Home({ params: { lng } }: Props) {
   const { t } = await useTranslation(lng);
   return (
     <div className="">
       {/* test */}
-      <Link href={`${lng}/blog`}>second page</Link>
-      <h1>{t('to-client-page')}</h1>
+      <Trans i18nKey="languageSwitcher" t={t}>
+        Switch from <strong>{lng}</strong> to:{' '}
+      </Trans>
+      {languages
+        .filter((l) => lng !== l)
+        .map((l, index) => {
+          return (
+            <span key={l}>
+              {index > 0 && ' or '}
+              <Link href={`/${l}`}>{l}</Link>
+            </span>
+          );
+        })}
 
       {/* Greeting */}
       <section className="bg-gradient-to-r from-gray-500 to-slate-400 dark:bg-gradient-to-l dark:from-blue-800 dark:to-primary mb-8 bg-clip-text text-4xl font-extrabold leading-[60px] tracking-tight text-transparent md:text-7xl md:leading-[86px]">
