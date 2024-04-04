@@ -1,13 +1,12 @@
 'use client';
 import headerNavLinks from '@/constants/headerNavLink';
-import React from 'react';
-import CustomLink from '../shared/link';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
+import CustomLink from '../shared/link';
 
 const HeaderNav = () => {
   const pathname = usePathname();
-  // const { t } = useTranslation(lng);
+
   return (
     <>
       {headerNavLinks.map((item) => (
@@ -19,7 +18,7 @@ const HeaderNav = () => {
               pathname.startsWith(item.href) && 'bg-gray-200 dark:bg-primary'
             )}
           >
-            {/* {t(item.title)} */}
+            {item.title}
           </CustomLink>
         </li>
       ))}

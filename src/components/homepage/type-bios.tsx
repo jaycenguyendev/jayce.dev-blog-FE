@@ -3,9 +3,7 @@ import React, { useRef } from 'react';
 import Typed from 'typed.js';
 import Twemoji from '@/components/ui/twemoji';
 
-type Props = {};
-
-const TypeBios = (props: Props) => {
+const TypeBios = () => {
   const el = useRef(null);
 
   React.useEffect(() => {

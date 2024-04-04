@@ -11,6 +11,12 @@
     "react/no-unescaped-entities": 0,
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }

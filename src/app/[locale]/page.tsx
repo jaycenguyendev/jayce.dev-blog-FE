@@ -4,36 +4,26 @@ import SpotifyNowPlaying from '@/components/homepage/spotify-now-playing';
 import TypeBios from '@/components/homepage/type-bios';
 import CustomLink from '@/components/shared/link';
 import Animation3dHoverEffect from '@/components/ui/animation-3d-hover-effect';
+import LanguageChanger from '@/components/ui/local-switcher-2';
 import Twemoji from '@/components/ui/twemoji';
+import { useTranslations } from 'next-intl';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
-import { useTranslation } from '../i18n';
-import { Trans } from 'react-i18next/TransWithoutContext';
-import { languages } from '../i18n/settings';
-import Link from 'next/link';
 
 type Props = {
-  params: {
-    lng: string;
-  };
+  params: { locale: string };
 };
-export default async function Home({ params: { lng } }: Props) {
-  const { t } = await useTranslation(lng);
+
+export default function IndexPage({ params: { locale } }: Props) {
+  // Enable static rendering
+  unstable_setRequestLocale(locale);
+
+  const t = useTranslations('Index');
   return (
     <div className="">
       {/* test */}
-      <Trans i18nKey="languageSwitcher" t={t}>
-        Switch from <strong>{lng}</strong> to:{' '}
-      </Trans>
-      {languages
-        .filter((l) => lng !== l)
-        .map((l, index) => {
-          return (
-            <span key={l}>
-              {index > 0 && ' or '}
-              <Link href={`/${l}`}>{l}</Link>
-            </span>
-          );
-        })}
+      <h1>{t('title')}</h1>
+      <LanguageChanger />
 
       {/* Greeting */}
       <section className="bg-gradient-to-r from-gray-500 to-slate-400 dark:bg-gradient-to-l dark:from-blue-800 dark:to-primary mb-8 bg-clip-text text-4xl font-extrabold leading-[60px] tracking-tight text-transparent md:text-7xl md:leading-[86px]">
