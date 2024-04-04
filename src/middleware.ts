@@ -1,46 +1,24 @@
-import { NextResponse, NextRequest } from 'next/server';
-import acceptLanguage from 'accept-language';
-import { fallbackLng, languages, cookieName } from '@/app/i18n/settings';
+import createMiddleware from 'next-intl/middleware';
+import { pathnames, locales, localePrefix } from '@/config/multi-language';
 
-acceptLanguage.languages(languages);
-
-// export const config = {
-//   // matcher: '/:lng*'
-//   matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)'],
-
-// };
+export default createMiddleware({
+  defaultLocale: 'en',
+  locales,
+  pathnames,
+  localePrefix,
+});
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|images|favicon.ico).*)'],
+  matcher: [
+    // Enable a redirect to a matching locale at the root
+    '/',
+
+    // Set a cookie to remember the previous locale for
+    // all requests that have a locale prefix
+    '/(es|en)/:path*',
+
+    // Enable redirects that add missing locales
+    // (e.g. `/pathnames` -> `/en/pathnames`)
+    '/((?!_next|_vercel|.*\\..*).*)',
+  ],
 };
-
-// export const config = {
-//     matcher: '/:lng*'
-//   }
-
-export function middleware(req: NextRequest) {
-  if (req.nextUrl.pathname.indexOf('icon') > -1 || req.nextUrl.pathname.indexOf('chrome') > -1)
-    return NextResponse.next();
-  let lng: string | undefined | null;
-  if (req.cookies.has(cookieName)) lng = acceptLanguage.get(req.cookies.get(cookieName)?.value);
-  if (!lng) lng = acceptLanguage.get(req.headers.get('Accept-Language'));
-  if (!lng) lng = fallbackLng;
-
-  // Redirect if lng in path is not supported
-  if (
-    !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
-    !req.nextUrl.pathname.startsWith('/_next')
-  ) {
-    return NextResponse.redirect(new URL(`/${lng}${req.nextUrl.pathname}`, req.url));
-  }
-
-  if (req.headers.has('referer')) {
-    const refererUrl = new URL(req.headers.get('referer') || '');
-    const lngInReferer = languages.find((l) => refererUrl.pathname.startsWith(`/${l}`));
-    const response = NextResponse.next();
-    if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
-    return response;
-  }
-
-  return NextResponse.next();
-}

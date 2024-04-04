@@ -1,4 +1,7 @@
 {
+  "Index": {
+    "title": "Hello world!!!!!"
+  },
   "site_meta_data": {
     "title": "Leo's blog - Leo's coding journey",
     "author": "Leo Huynh",
@@ -87,5 +90,8 @@
   },
   "tag": {
     "no_tags_found": "No tags found."
+  },
+  "localeLayout": {
+    "title": "next-intl example"
   }
 }

@@ -1,4 +1,7 @@
 {
+  "Index": {
+    "title": "Hello world! Tây ban nha"
+  },
   "site_meta_data": {
     "title": "El blog de Leo - La aventura de programación de Leo",
     "author": "Leo Huynh",
@@ -87,5 +90,8 @@
   },
   "tag": {
     "no_tags_found": "No se han encontrado etiquetas."
+  },
+  "localeLayout": {
+    "title": "Ejemplo de next-intl"
   }
 }

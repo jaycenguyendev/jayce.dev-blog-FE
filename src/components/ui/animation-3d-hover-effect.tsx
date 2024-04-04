@@ -1,15 +1,15 @@
 'use client';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { CSSProperties, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 };
 
 const Animation3dHoverEffect = ({ children, className }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  const [style, setStyle] = useState<React.CSSProperties>({});
+  const [style, setStyle] = useState<CSSProperties>({});
 
   const onMouseMove = useCallback((e: MouseEvent) => {
     if (!ref.current || window.innerWidth < 1280) return;
