@@ -18,5 +18,17 @@
         "endOfLine": "auto"
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/components/ui/*.tsx"],
+      "rules": {
+        "react/prop-types": [
+          2,
+          { "ignore": ["className", "sideOffset", "checked", "align", "sideOffset"] }
+        ],
+        "react-refresh/only-export-components": "off"
+      }
+    }
+  ]
 }

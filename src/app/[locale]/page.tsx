@@ -61,8 +61,9 @@ export default function IndexPage({ params: { locale } }: Props) {
           <p>I stated this blog to practice my skill and share my knowledge</p>
 
           <div className="grid grid-cols-2 gap-2 mt-3">
-            <CustomLink href="/blog">
-              <Twemoji emoji="twa-memo" /> My writings
+            <CustomLink href="/blog" className="flex gap-1">
+              <Twemoji emoji="twa-memo" />
+              <span>My writings</span>
             </CustomLink>
             <CustomLink href="/about">
               <Twemoji emoji="twa-face-with-monocle" /> More about me and myself

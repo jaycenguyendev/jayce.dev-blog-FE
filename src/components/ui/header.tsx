@@ -5,6 +5,7 @@ import MobileNav from './mobile-nav';
 import ThemeSwitch from './theme-switch';
 import siteMetadata from '@/data/siteMetadata';
 import HeaderNav from '@/components/ui/header-nav';
+import { LanguageSwitcher } from '@/components/homepage/language-switcher';
 const Header = () => {
   return (
     <header className="fixed top-0 w-full  z-40 py-4 bg-white/75 backdrop-blur supports-backdrop-blur dark:bg-dark/75">
@@ -22,6 +23,7 @@ const Header = () => {
           <HeaderNav />
           <AnalyticsLink />
           <ThemeSwitch />
+          <LanguageSwitcher />
           <MobileNav />
         </ul>
       </div>
