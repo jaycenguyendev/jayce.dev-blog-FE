@@ -3,9 +3,11 @@ import headerNavLinks from '@/constants/headerNavLink';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import CustomLink from '../shared/link';
+import { useTranslations } from 'next-intl';
 
 const HeaderNav = () => {
   const pathname = usePathname();
+  const t = useTranslations();
 
   return (
     <>
@@ -18,7 +20,7 @@ const HeaderNav = () => {
               pathname.startsWith(item.href) && 'bg-gray-200 dark:bg-primary'
             )}
           >
-            {item.title}
+            {t(item.title)}
           </CustomLink>
         </li>
       ))}

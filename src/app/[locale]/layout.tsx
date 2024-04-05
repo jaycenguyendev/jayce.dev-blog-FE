@@ -7,10 +7,13 @@ import clsx from 'clsx';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
-import { Inter } from 'next/font/google';
 import React from 'react';
+import { Outfit } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+});
 
 type Props = {
   children: React.ReactNode;
@@ -42,19 +45,19 @@ export default function LocaleLayout({ children, params: { locale } }: Props) {
       <body
         suppressHydrationWarning
         className={clsx(
-          inter.className,
+          outfit.className,
           'relative bg-white text-black antialiased dark:bg-dark dark:text-white'
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-          <Header />
-          <main className="mx-auto mt-24 w-full max-w-4xl px-4 md:px-6 xl:max-w-5xl xl:px-0">
-            <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+            <Header />
+            <main className="mx-auto mt-24 w-full max-w-4xl px-4 md:px-6 xl:max-w-5xl xl:px-0">
               {children}
-            </NextIntlClientProvider>
-          </main>
-          {/* <Footer /> */}
-        </ThemeProvider>
+            </main>
+            {/* <Footer /> */}
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
