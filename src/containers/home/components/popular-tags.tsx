@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomLink from '../shared/link';
+import CustomLink from '../../../components/shared/link';
 import { BrandIcons, popularTags } from '@/constants/popularTags';
 
 const PopularTags = () => {

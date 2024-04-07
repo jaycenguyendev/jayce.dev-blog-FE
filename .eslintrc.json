@@ -25,7 +25,7 @@
       "rules": {
         "react/prop-types": [
           2,
-          { "ignore": ["className", "sideOffset", "checked", "align", "sideOffset"] }
+          { "ignore": ["className", "sideOffset", "checked", "align", "sideOffset", "position"] }
         ],
         "react-refresh/only-export-components": "off"
       }

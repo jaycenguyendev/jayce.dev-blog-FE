@@ -3,14 +3,20 @@ enum Languages {
   ES = 'es',
 }
 
-export const LOCALES = [
+export type Locale = {
+  code: Languages;
+  name: 'English' | 'Español';
+  flag: string;
+};
+
+export const LOCALES: Locale[] = [
   {
-    code: 'en',
+    code: Languages.EN,
     name: 'English',
     flag: 'https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/us.svg',
   },
   {
-    code: 'es',
+    code: Languages.ES,
     name: 'Español',
     flag: 'https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/es.svg',
   },
