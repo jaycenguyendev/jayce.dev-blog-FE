@@ -4,7 +4,7 @@ import { pathnames, locales, localePrefix } from '@/config/multi-language';
 export default createMiddleware({
   defaultLocale: 'en',
   locales,
-  pathnames,
+  // pathnames,
   localePrefix,
 });
 
