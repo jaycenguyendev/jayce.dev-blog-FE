@@ -9,6 +9,9 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import React from 'react';
 import { Outfit } from 'next/font/google';
+import { Metadata } from 'next';
+import envConfig from '@/config/env';
+import Footer from '@/components/ui/footer';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -26,11 +29,25 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params: { locale } }: Omit<Props, 'children'>) {
-  const t = await getTranslations({ locale, namespace: 'localeLayout' });
+export async function generateMetadata({
+  params: { locale },
+}: Omit<Props, 'children'>): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'site_meta_data' });
 
   return {
-    title: t('title'),
+    title: {
+      template: `%s - ${t('title')}`,
+      default: t('title'), // a default is required when creating a template
+    },
+    description: t('description'),
+    openGraph: {
+      url: envConfig.NEXT_PUBLIC_URL,
+      type: 'website',
+      siteName: t('title'),
+      description: t('description'),
+      title: t('title'),
+      images: `${envConfig.NEXT_PUBLIC_URL}${siteMetadata.socialBanner}`,
+    },
   };
 }
 
@@ -55,7 +72,7 @@ export default function LocaleLayout({ children, params: { locale } }: Props) {
             <main className="mx-auto mt-24 w-full max-w-4xl px-4 md:px-6 xl:max-w-5xl xl:px-0">
               {children}
             </main>
-            {/* <Footer /> */}
+            <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

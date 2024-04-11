@@ -1,3 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+}
+
+@layer components {
+  .separate-line {
+    @apply h-[1px] w-full border-solid bg-gray-200 dark:bg-gray-700;
+  }
+}
+
+@layer utilities {
+  /* START: CSS popular tags */
+  .popular-tags .javascript {
+    @apply bg-amber-400;
+  }
+
+  .popular-tags .typescript {
+    @apply bg-blue-500;
+  }
+
+  .popular-tags .nestjs {
+    @apply bg-rose-500;
+  }
+
+  .popular-tags .react {
+    @apply bg-sky-500;
+  }
+
+  .popular-tags .devops {
+    @apply bg-sky-600;
+  }
+
+  .popular-tags .database {
+    @apply bg-green-900;
+  }
+
+  /* END: CSS popular tags */
+
+  /* START: CSS  */
+  .prose {
+    font-size: 18px;
+  }
+
+  .prose h2 {
+    font-size: 28px;
+  }
+
+  .prose h3 {
+    font-size: 24px;
+  }
+
+  .prose img {
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .prose blockquote {
+    background: #ebebeb;
+  }
+
+  .dark .dark\:prose-dark blockquote {
+    background: #5c6370;
+  }
+
+  /* END: CSS Prose */
+}

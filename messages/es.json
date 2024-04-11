@@ -1,14 +1,11 @@
 {
-  "Index": {
-    "title": "Hello world! Tây ban nha"
-  },
   "site_meta_data": {
-    "title": "El blog de Leo - La aventura de programación de Leo",
-    "author": "Leo Huynh",
-    "full_name": "Tuan Anh Huynh",
-    "header_title": "El blog de Leo - La aventura de programación de Leo",
-    "footer_title": "El blog de Leo - La aventura de programación de Leo",
-    "description": "La aventura de programación de Leo - historias de trabajo y vida a través del teclado de un Ingeniero de Software de mente abierta",
+    "title": "El blog de Jayce - La aventura de programación de Jayce",
+    "author": "Jayce Nguyen",
+    "full_name": "Nguyen Phuc Hoang",
+    "header_title": "El blog de Jayce - La aventura de programación de Jayce",
+    "footer_title": "El blog de Jayce - La aventura de programación de Jayce",
+    "description": "La aventura de programación de Jayce - historias de trabajo y vida a través del teclado de un Ingeniero de Software de mente abierta",
     "language": "es"
   },
   "happy_reading": "Feliz lectura",
