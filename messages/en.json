@@ -1,14 +1,11 @@
 {
-  "Index": {
-    "title": "Hello world!!!!!"
-  },
   "site_meta_data": {
-    "title": "Leo's blog - Leo's coding journey",
-    "author": "Leo Huynh",
-    "full_name": "Tuan Anh Huynh",
-    "header_title": "Leo's blog - Leo's coding journey",
-    "footer_title": "Leo's blog - Leo's coding journey",
-    "description": "Leo's coding journey - work and life stories through the keyboard of an open-minded Software Engineer",
+    "title": "Jayce's blog - Jayce's coding journey",
+    "author": "Jayce Nguyen",
+    "full_name": "Nguyen Phuc Hoang",
+    "header_title": "Jayce's blog - Jayce's coding journey",
+    "footer_title": "Jayce's blog - Jayce's coding journey",
+    "description": "Jayce's coding journey - work and life stories through the keyboard of an open-minded Software Engineer",
     "language": "en"
   },
   "happy_reading": "Happy reading",
@@ -90,8 +87,5 @@
   },
   "tag": {
     "no_tags_found": "No tags found."
-  },
-  "localeLayout": {
-    "title": "next-intl example"
   }
 }

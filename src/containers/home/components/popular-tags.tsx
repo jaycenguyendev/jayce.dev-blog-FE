@@ -1,6 +1,6 @@
-import React from 'react';
+import BrandIcon from '@/components/ui/brand-icon';
+import { popularTags } from '@/constants/popularTags';
 import CustomLink from '../../../components/shared/link';
-import { BrandIcons, popularTags } from '@/constants/popularTags';
 
 const PopularTags = () => {
   return (
@@ -14,10 +14,9 @@ const PopularTags = () => {
       <div className="popular-tags grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 justify-items-center py-6">
         {popularTags.map((popularTag) => {
           const className = `flex items-center gap-2 p-3 w-32 rounded-lg ${popularTag.slug}`;
-          const Icon = BrandIcons[popularTag.iconType];
           return (
             <CustomLink key={popularTag.slug} href={popularTag.href} className={className}>
-              <Icon className="w-5 h-5" />
+              <BrandIcon name={popularTag.iconType} className="w-5 h-5" />
               <span className="text-white">{popularTag.title}</span>
             </CustomLink>
           );

@@ -21,7 +21,7 @@ export function LanguageSwitcher() {
             <li key={locale.code}>
               <PopoverClose
                 onClick={() => handleChangeLocale(locale)}
-                className="flex items-center gap-3 py-1 px-[6px] cursor-pointer  hover:bg-gray-100 dark:hover:bg-gray-700 rounded w-full"
+                className="flex items-center gap-3 py-1 px-[6px] cursor-pointer  hover:bg-gray-100 dark:hover:bg-gray-700 rounded w-full outline-none"
               >
                 <Image src={locale.flag} alt="flag" width={20} height={20} />
                 <span>{locale.name}</span>
