@@ -1,4 +1,4 @@
-import Languages, { LOCALES, Locale } from '@/constants/languages';
+import Languages, { LOCALES, Locale } from '@/constants/languages.constants';
 import { usePathname, useRouter } from '@/navigation';
 import { useLocale } from 'next-intl';
 import { useMemo } from 'react';

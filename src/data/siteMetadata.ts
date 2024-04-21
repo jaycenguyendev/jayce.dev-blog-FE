@@ -1,4 +1,4 @@
-import envConfig from '@/config/env';
+import envConfig from '@/config/env.config';
 
 const siteMetadata = {
   headerTitle: "Jayce's Blog",

@@ -1,6 +1,6 @@
 import BrandIcon from '@/components/ui/brand-icon';
-import { popularTags } from '@/constants/popularTags';
 import CustomLink from '../../../components/shared/link';
+import { popularTags } from '@/constants';
 
 const PopularTags = () => {
   return (

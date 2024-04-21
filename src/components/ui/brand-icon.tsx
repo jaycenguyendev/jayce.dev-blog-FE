@@ -1,4 +1,4 @@
-import { BrandIcons } from '@/constants/popularTags';
+import { BrandIcons } from '@/constants';
 import { BrandIconsType } from '@/types';
 import React from 'react';
 

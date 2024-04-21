@@ -1,6 +1,6 @@
 'use client';
 import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { LOCALES } from '@/constants/languages';
+import { LOCALES } from '@/constants/languages.constants';
 import useLocaleCustomHook from '@/containers/home/hooks/useLocale';
 import Image from 'next/image';
 

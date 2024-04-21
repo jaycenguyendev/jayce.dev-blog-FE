@@ -1,9 +1,9 @@
 'use client';
-import headerNavLinks from '@/constants/headerNavLink';
 import clsx from 'clsx';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import CustomLink from '../shared/link';
+import { headerNavLinks } from '@/constants';
 
 const MobileNav = () => {
   const [isDisplayNav, setIsDisplayNav] = useState(false);
