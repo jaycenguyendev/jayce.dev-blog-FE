@@ -1,9 +1,9 @@
 'use client';
-import headerNavLinks from '@/constants/headerNavLink';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import CustomLink from '../shared/link';
 import { useTranslations } from 'next-intl';
+import { headerNavLinks } from '@/constants';
 
 const HeaderNav = () => {
   const pathname = usePathname();

@@ -5,6 +5,7 @@ import PopularTags from '@/containers/home/components/popular-tags';
 import RecentPosts from '@/containers/home/components/recent-posts';
 import SpotifyNowPlaying from '@/containers/home/components/spotify-now-playing';
 import TypeBios from '@/containers/home/components/type-bios';
+import http from '@/service/http.service';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 
@@ -12,9 +13,24 @@ type Props = {
   params: { locale: string };
 };
 
-export default function IndexPage({ params: { locale } }: Props) {
+export default async function IndexPage({ params: { locale } }: Props) {
   // Enable static rendering
   unstable_setRequestLocale(locale);
+
+  // const staticData = await (
+  //   await fetch('http://localhost:4000/api/v1/posts', {
+  //     cache: 'force-cache',
+  //     method: 'GET',
+  //   })
+  // ).json();
+
+  try {
+    const data = await http.get('/posts', {
+      cache: 'no-cache',
+    });
+  } catch (error) {
+    console.log('loiiiiii ne ', error);
+  }
 
   return (
     <div className="">

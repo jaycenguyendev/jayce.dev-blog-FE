@@ -1,4 +1,4 @@
-enum Languages {
+export enum Languages {
   EN = 'en',
   ES = 'es',
 }
@@ -21,5 +21,3 @@ export const LOCALES: Locale[] = [
     flag: 'https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/es.svg',
   },
 ];
-
-export default Languages;

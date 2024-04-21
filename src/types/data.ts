@@ -1,2 +1,3 @@
-import { BrandIcons } from '@/constants/popularTags';
+import { BrandIcons } from '@/constants';
+
 export type BrandIconsType = keyof typeof BrandIcons;

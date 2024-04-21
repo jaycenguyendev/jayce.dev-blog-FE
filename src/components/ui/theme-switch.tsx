@@ -1,5 +1,5 @@
 'use client';
-import Theme from '@/constants/themes';
+import { Theme } from '@/constants/themes.constants';
 import useHasMounted from '@/hooks/useHasMounted';
 import MoonIcon from '@public/icons/moon.svg';
 import SunIcon from '@public/icons/sun.svg';

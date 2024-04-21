@@ -1,5 +1,5 @@
 import Header from '@/components/ui/header';
-import { locales } from '@/config/multi-language';
+import { locales } from '@/config/multi-language.config';
 import siteMetadata from '@/data/siteMetadata';
 import '@/styles/globals.css';
 import '@/styles/twemoji.css';
@@ -10,7 +10,7 @@ import { ThemeProvider } from 'next-themes';
 import React from 'react';
 import { Outfit } from 'next/font/google';
 import { Metadata } from 'next';
-import envConfig from '@/config/env';
+import envConfig from '@/config/env.config';
 import Footer from '@/components/ui/footer';
 
 const outfit = Outfit({

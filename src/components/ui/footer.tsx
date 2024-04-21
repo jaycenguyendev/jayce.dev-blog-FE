@@ -8,16 +8,16 @@ const Footer = () => {
       <div className="mb-8 mt-16 items-center justify-between space-y-4 md:mb-10 md:flex md:space-y-0">
         <div className="flex items-center space-x-1">
           <span className="mr-1 text-gray-500 dark:text-gray-400">Build with</span>
-          <CustomLink href={`https://nextjs.org/${siteMetadata.siteName}`}>
+          <CustomLink href={`https://nextjs.org/?ref=${siteMetadata.siteName}`}>
             <BrandIcon name="NextJS" className="h-5 w-5" />
           </CustomLink>
-          <CustomLink href={`https://tailwindcss.com/${siteMetadata.siteName}`}>
+          <CustomLink href={`https://tailwindcss.com/?ref=${siteMetadata.siteName}`}>
             <BrandIcon name="TailwindCSS" className="h-5 w-5" />
           </CustomLink>
-          <CustomLink href={`https://www.typescriptlang.org/${siteMetadata.siteName}`}>
+          <CustomLink href={`https://www.typescriptlang.org/?ref=${siteMetadata.siteName}`}>
             <BrandIcon name="Typescript" className="h-5 w-5" />
           </CustomLink>
-          <CustomLink href={`https://umami.is/${siteMetadata.siteName}`}>
+          <CustomLink href={`https://umami.is/?ref=${siteMetadata.siteName}`}>
             <BrandIcon name="Umami" className="h-5 w-5" />
           </CustomLink>
 
