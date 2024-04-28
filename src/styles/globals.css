@@ -9,6 +9,10 @@
   .separate-line {
     @apply h-[1px] w-full border-solid bg-gray-200 dark:bg-gray-700;
   }
+
+  .input {
+    @apply block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-sky-500 focus:ring-sky-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100 focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+  }
 }
 
 @layer utilities {
@@ -66,4 +70,11 @@
   }
 
   /* END: CSS Prose */
+
+  /* Start: TYPOGRAPHY */
+  .h1-bold {
+    @apply text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14;
+  }
+
+  /* End: TYPOGRAPHY */
 }
