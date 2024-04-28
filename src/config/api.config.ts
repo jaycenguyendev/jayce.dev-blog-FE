@@ -4,10 +4,13 @@ import { Method } from '@/constants';
 export type CustomOptions = Omit<RequestInit, 'method'> & {
   baseUrl?: string | undefined;
 };
-
 export type ResponseHttp<T> = {
   httpStatusCode: number;
-  data: T;
+  data?: T;
+  errors?: {
+    errorCode: string;
+    errorMessage: string;
+  };
 };
 
 class HttpError extends Error {
@@ -39,7 +42,7 @@ export const clientSessionToken = new SessionToken();
 export const request = async <Response>(
   method: keyof typeof Method,
   url: string,
-  options?: CustomOptions | undefined
+  options?: CustomOptions
 ) => {
   const body = options?.body ? JSON.stringify(options.body) : undefined;
   const baseHeaders = {
@@ -63,10 +66,9 @@ export const request = async <Response>(
   const responseData: ResponseHttp<Response> = await res.json();
 
   if (!res.ok) {
-    console.log('runnnnnnnn');
     throw new HttpError({
       status: res.status,
-      payload: responseData,
+      payload: responseData.errors,
     });
   }
   //   if (['/auth/login', '/auth/register'].includes(url)) {
@@ -74,5 +76,5 @@ export const request = async <Response>(
   //   } else if ('/auth/logout'.includes(url)) {
   //     clientSessionToken.value = '';
   //   }
-  return responseData;
+  return responseData.data;
 };
