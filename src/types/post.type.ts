@@ -21,6 +21,7 @@ export type GetPostsResponse = {
 };
 
 export type QueryParamsPosts = {
-  page: number;
-  limit: number;
+  page?: number;
+  limit?: number;
+  post?: string;
 };

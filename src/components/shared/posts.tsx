@@ -1,5 +1,4 @@
 'use client';
-
 import Post from '@/components/shared/post';
 import Loader from '@/components/ui/loader';
 import { FORMAT_DATE } from '@/constants';
@@ -8,16 +7,17 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 type Props = {
   formatDay?: string;
+  searchQuery?: string;
 };
 
-const Posts = ({ formatDay = FORMAT_DATE.MMMM_D_YYYY }: Props) => {
-  const { posts, hasMore, fetchMorePosts } = usePosts();
+const Posts = ({ formatDay = FORMAT_DATE.MMMM_D_YYYY, searchQuery = '' }: Props) => {
+  const { posts, hasMore, fetchMorePosts } = usePosts(searchQuery);
   return (
     <ul>
       <InfiniteScroll
         dataLength={posts.length}
         next={fetchMorePosts}
-        hasMore={hasMore}
+        hasMore={!searchQuery && hasMore}
         loader={
           <div className="text-center">
             <Loader />
