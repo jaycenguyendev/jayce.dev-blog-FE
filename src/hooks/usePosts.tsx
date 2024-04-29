@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { QueryParamsPosts } from '@/types';
 
 const POSTS_LIMIT = 8;
-const usePosts = () => {
+const usePosts = (searchQuery?: string) => {
   const [page, setPage] = useState(2);
   const [posts, setPosts] = useState<PostType[]>([]);
   const [hasMore, setHasMore] = useState(true);
@@ -17,7 +17,7 @@ const usePosts = () => {
     };
     const responsePosts = await postService.getPosts(params);
     const postsData = responsePosts?.posts ?? [];
-    setPosts([...posts, ...postsData]);
+    queryParams?.post ? setPosts(postsData) : setPosts([...posts, ...postsData]);
     setTotalPages(responsePosts?.totalPages);
   };
 
@@ -31,8 +31,12 @@ const usePosts = () => {
   };
 
   useEffect(() => {
-    getPosts();
-  }, []);
+    searchQuery
+      ? getPosts({
+          post: searchQuery,
+        })
+      : getPosts();
+  }, [searchQuery]);
 
   return {
     posts,

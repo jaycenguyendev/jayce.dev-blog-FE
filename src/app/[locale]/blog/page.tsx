@@ -15,7 +15,7 @@ const Blog = async (props: Props) => {
   const searchQuery = props?.searchParams?.search || '';
 
   const tags = (await tagService.getTags()) ?? [];
-  return <BlogContainer tags={tags} />;
+  return <BlogContainer tags={tags} searchQuery={searchQuery} />;
 };
 
 export default Blog;
