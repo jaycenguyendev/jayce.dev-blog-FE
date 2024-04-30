@@ -7,9 +7,10 @@ type Props = {
   label: string;
   type?: HTMLInputTypeAttribute;
   className?: string;
+  searchQuery?: string;
 };
 
-const SearchInput = ({ label, type = 'text', className = '' }: Props) => {
+const SearchInput = ({ label, type = 'text', className = '', searchQuery = '' }: Props) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -25,7 +26,7 @@ const SearchInput = ({ label, type = 'text', className = '' }: Props) => {
       replace(`${pathname}?${params.toString().replaceAll('+', '%20')}`);
     },
     // delay in ms
-    1000
+    500
   );
   return (
     <div className="relative max-w-lg">
@@ -36,6 +37,7 @@ const SearchInput = ({ label, type = 'text', className = '' }: Props) => {
           type={type}
           onChange={(e) => handleSearch(e.target.value)}
           placeholder={label}
+          defaultValue={searchQuery}
           className={`block w-full rounded-md border border-gray-300 bg-white pl-4 pr-8 py-2 text-gray-900 focus:border-sky-500 focus:ring-sky-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100 ${className}`}
         />
       </label>
