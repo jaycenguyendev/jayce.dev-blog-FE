@@ -1,17 +1,24 @@
-'use client';
 import Post from '@/components/shared/post';
 import Loader from '@/components/ui/loader';
 import { FORMAT_DATE } from '@/constants';
-import usePosts from '@/hooks/usePosts';
+import { Post as PostType } from '@/types';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 type Props = {
+  posts: PostType[];
+  hasMore: boolean;
+  fetchMorePosts: () => Promise<void>;
   formatDay?: string;
   searchQuery?: string;
 };
 
-const Posts = ({ formatDay = FORMAT_DATE.MMMM_D_YYYY, searchQuery = '' }: Props) => {
-  const { posts, hasMore, fetchMorePosts } = usePosts(searchQuery);
+const Posts = ({
+  posts,
+  hasMore,
+  fetchMorePosts,
+  formatDay = FORMAT_DATE.MMMM_D_YYYY,
+  searchQuery = '',
+}: Props) => {
   return (
     <ul>
       <InfiniteScroll
