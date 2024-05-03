@@ -86,9 +86,8 @@
     "of": "de"
   },
   "tag": {
+    "tag_title": "Etiquetas",
+    "intro": "Escribo principalmente sobre desarrollo web, tecnología y algunas veces sobre mi vida personal. Usa la búsqueda a continuación para filtrar por título.",
     "no_tags_found": "No se han encontrado etiquetas."
-  },
-  "localeLayout": {
-    "title": "Ejemplo de next-intl"
   }
 }

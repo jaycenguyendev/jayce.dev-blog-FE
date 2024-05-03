@@ -35,7 +35,7 @@ const Post = ({ post, formatDay = FORMAT_DATE.MMMM_D_YYYY }: Props) => {
             </h2>
 
             <div className="flex flex-wrap !mt-2">
-              {post.tags.map((tag) => (
+              {post?.tags?.map((tag) => (
                 <CustomLink
                   className="mr-3 text-sm font-medium uppercase text-primary hover:text-sky-600 dark:hover:text-sky-400"
                   href={`/tags/${tag.slug}`}

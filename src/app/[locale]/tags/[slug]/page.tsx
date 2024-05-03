@@ -1,3 +1,6 @@
+import TagContainer from '@/containers/tag';
+import tagService from '@/service/tag.service';
+import { Tag as TagType } from '@/types';
 import React from 'react';
 
 type Props = {
@@ -6,8 +9,19 @@ type Props = {
   };
 };
 
-const Tags = (props: Props) => {
-  return <div>Tag page</div>;
+export async function generateStaticParams() {
+  const allTags = (await tagService.getTags()) ?? [];
+
+  return allTags.map((tag) => ({
+    slug: tag.slug,
+  }));
+}
+
+const Tag = async (props: Props) => {
+  const { slug } = props.params;
+  const allTags = (await tagService.getTags()) ?? [];
+  const tag = ((await tagService.getTagsBySlug(slug)) ?? []) as TagType;
+  return <TagContainer posts={tag.posts} tags={allTags} />;
 };
 
-export default Tags;
+export default Tag;

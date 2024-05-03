@@ -13,7 +13,7 @@ export type Post = {
   updatedAt: string | null;
   publishedAt: string | null;
   content: string | null;
-  tags: Tag[];
+  tags?: Tag[];
 };
 export type GetPostsResponse = {
   posts: Post[];

@@ -86,6 +86,8 @@
     "of": "of"
   },
   "tag": {
+    "tag_title": "Tags",
+    "intro": "I write mostly about web development, tech related, and sometime about my personal life. Use the search below to filter by title.",
     "no_tags_found": "No tags found."
   }
 }
