@@ -5,11 +5,18 @@ type Props = {
   loader: React.ReactElement;
   fetchMore: () => void;
   hasMore: boolean;
-  endMessage: React.ReactElement;
-  className: string;
+  endMessage?: React.ReactElement;
+  className?: string;
 };
 
-const InfiniteScroll = ({ children, loader, fetchMore, hasMore, endMessage, className }: Props) => {
+const InfiniteScroll = ({
+  children,
+  loader,
+  fetchMore,
+  hasMore,
+  endMessage = <></>,
+  className = '',
+}: Props) => {
   const pageEndRef = useRef(null);
   useEffect(() => {
     if (hasMore) {
@@ -33,7 +40,6 @@ const InfiniteScroll = ({ children, loader, fetchMore, hasMore, endMessage, clas
   return (
     <div className={className}>
       {children}
-
       {hasMore ? <div ref={pageEndRef}>{loader}</div> : endMessage}
     </div>
   );

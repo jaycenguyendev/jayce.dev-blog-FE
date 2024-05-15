@@ -22,7 +22,7 @@ const Posts = ({
   return (
     <ul>
       <InfiniteScroll
-        dataLength={posts.length}
+        dataLength={posts?.length || 0}
         next={fetchMorePosts}
         hasMore={!searchQuery && hasMore}
         loader={
@@ -32,9 +32,10 @@ const Posts = ({
         }
         className="!overflow-hidden"
       >
-        {posts.map((post) => {
-          return <Post key={post.slug} post={post} formatDay={formatDay} />;
-        })}
+        {posts &&
+          posts.map((post) => {
+            return <Post key={post?.slug} post={post} formatDay={formatDay} />;
+          })}
       </InfiniteScroll>
     </ul>
   );
